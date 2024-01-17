@@ -1,0 +1,11 @@
+http:
+  middlewares:
+    real-ip:
+      plugin:
+        real-ip:
+          Proxy:
+            - proxyHeadername: X-From-Cdn
+              proxyHeadervalue: cf-foo
+              realIP: Cf-Connecting-Ip
+            - proxyHeadername: "*"
+              realIP: RemoteAddr

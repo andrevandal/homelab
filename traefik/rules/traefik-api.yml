@@ -1,0 +1,9 @@
+# Dynamic Configuration
+http:
+  routers:
+    api:
+      rule: Host(`traefik.andrevandal.dev`)
+      service: api@internal
+      middlewares:
+        - chain-authelia
+      tls: true

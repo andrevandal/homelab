@@ -1,0 +1,13 @@
+http:
+  middlewares:
+    chain-authelia:
+      chain:
+        middlewares:
+          - real-ip
+          - secure-headers
+          - cloudflare-ips
+          - auth
+    auth:
+      basicAuth:
+        users:
+          - "vandal:$apr1$ejQPces9$7iDDVPcQspNLpdr2tsaHh1"

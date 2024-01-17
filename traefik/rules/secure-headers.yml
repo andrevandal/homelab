@@ -1,0 +1,25 @@
+http:
+  middlewares:
+    secure-headers:
+      headers:
+        accessControlAllowMethods:
+          - GET
+          - OPTIONS
+          - PUT
+        accessControlMaxAge: 100
+        hostsProxyHeaders:
+          - X-Forwarded-Host
+          - Cf-Connecting-Ip
+          - X-From-Cdn
+        stsSeconds: 63072000
+        stsIncludeSubdomains: true
+        stsPreload: true
+        forceSTSHeader: true
+        contentTypeNosniff: true
+        browserXssFilter: true
+        referrerPolicy: same-origin
+        permissionsPolicy:
+          camera 'none'; geolocation 'none'; microphone 'none'; payment
+          'none'; usb 'none'; vr 'none';
+        customResponseHeaders:
+          X-Robots-Tag: none,noarchive,nosnippet,notranslate,noimageindex,
